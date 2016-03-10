@@ -145,7 +145,7 @@ module Forum
 			end
 
 			new_id = conn.exec_params("INSERT INTO topics (topic) VALUES ($1) returning id", [new_topic]).first["id"]
-
+# binding.pry
 			redirect "/topics/#{new_id}"
 
 		end
