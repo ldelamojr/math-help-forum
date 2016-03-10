@@ -1,0 +1,34 @@
+<% if @non_secure_page == true %>
+  <!-- session.delet -->
+<% elsif current_user %> 
+	<p>You are logged in as <%= current_user["user_name"] %>.</p> 
+<%else%>
+	<% redirect "/login" %>
+<%end%>
+
+<!-- ######################################## -->
+<h1> Log in! or <a href="/signup">Sign up here</a></h1>
+
+<!-- <h2> Most Discussed Topic </h2> -->
+<%# @top_topic %>
+
+<div>
+	<% if params[:error] %>
+		<p><%= params[:error] %></p>
+	<% end %>
+</div>
+
+<form class="login" action="/login" method="post">
+	<div class="user_name">
+		<label for="user_name">User: </label>
+		<input type="text" name="user_name" val="<%= @user_name%>"/>
+	</div>
+	<div class="password">
+		<label for="question">Password: </label>
+		<input type="password" name="password"/>
+	</div>
+	<div>
+		<input type="submit" value="Log In"/>
+	</div>
+</form>
+

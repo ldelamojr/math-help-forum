@@ -1,0 +1,52 @@
+body {
+	text-align: center;
+}
+
+.logo {
+	display: inline-block;
+}
+
+.logout {
+	text-align: right;
+}
+
+.user {
+	text-align: right;
+}
+
+a.home-link {
+	text-align: left;
+}
+
+h3 {
+	background-image: url("http://lakesregionwater.com/images/questionsgit.jpg");
+	/*background-image: url("https://pixabay.com/static/uploads/photo/2015/12/13/09/40/banner-1090829_960_720.jpg");*/
+	text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;
+}
+
+footer {
+	text-align: left;
+	background-color: blue;
+	color: white;
+}
+
+form {
+	border: solid 1px blue;
+	margin-bottom: 200px;
+}
+
+.new-question {
+	font-size: 2em;
+}
+
+.reply-box {
+	border: solid blue 3px;
+}
+
+.reply {
+	border: teal 1px dashed;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+

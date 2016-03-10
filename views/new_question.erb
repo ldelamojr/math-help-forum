@@ -1,0 +1,28 @@
+<%# if @non_secure_page == true %>
+  <!-- session.delet -->
+<%# elsif current_user %> 
+	<!-- <p>You are logged in as <%#<%= current_user["user_name"] %>%>.</p>  -->
+<%#else%>
+	<%# redirect "/login" %>
+<%#end%>
+
+<!-- ######################################## -->
+<div class="main_content">
+
+	<h1><%# @topic from which user came %></h1>
+
+	<h2>Submit Question</h2>
+	<form class="new_question" action="/topics/<%= params[:topic_id] %>/new_question" method="post">
+		<div class="author">
+			<label for="user_name">User: </label>
+			<input type="text" name="user_name" val="<%= @user_name%>"/>
+		</div>
+		<div class="question_area">
+			<label for="new_question">Ask question here: </label>
+			<input type="text" name="new_question"/>
+		</div>
+		<div>
+			<input type="submit" value="Submit Question"/>
+		</div>
+	</form>
+</div>

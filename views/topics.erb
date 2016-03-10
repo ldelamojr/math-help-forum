@@ -1,0 +1,48 @@
+<%# if @non_secure_page == true %>
+  <!-- session.delet -->
+<%# elsif current_user %> 
+	<!-- <p>You are logged in as <%#<%= current_user["user_name"] %>%>.</p>  -->
+<%#else%>
+	<%# redirect "/login" %>
+<%#end%>
+
+<!-- ######################################## -->
+
+<%if current_user %>  <!--##################-->
+<h2> Welcome <%= current_user["user_name"] %><h2>
+<%end%>
+
+<h4>Choose an existing topic or make a new one at the bottom.</h4>
+
+
+
+<h5>Topics!</h5>
+<!-- if option box value is sort by comments, then -->
+<%# @topics_by_comments.each do |topic| %>
+	<p><a href="<%# topic %>"></a></p>
+<%#end%>
+<!-- else/elsif option box value is sort by upvotes, then-->
+<%# @topics_by_upvotes.each do |topic| %>
+	<p><a href="<%# topic %>"></a></p>
+<%#end%>
+
+<% @topics.each do |topic| %>
+	<p><a href="/topics/<%= topic["id"] %>"><%= topic["topic"] %></a></p>
+<%end%>
+<%if current_user %>  <!--##################-->
+
+<form class="topic" action="/topics/new_topic" method="post">
+	<div class="input_row">
+		<label for="new_topic">New Topic: </label>
+		<input name="new_topic"/>
+	</div>
+	<!-- <div class="input_row">
+		<label for="new_question">Submit a question(optional)</label>
+		<textarea name="new_question"></textarea>
+	</div> -->
+	<div class="input_row">
+		<input type="submit" value="Contribute New Topic"/>
+	</div>
+</form>
+<%end%> <!-- ################# -->
+
