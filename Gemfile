@@ -10,4 +10,4 @@ gem "pry"
 gem "rake"
 gem "redcarpet"
 gem "bcrypt"
-ruby '2.2.4'
+ruby '2.2.3'
