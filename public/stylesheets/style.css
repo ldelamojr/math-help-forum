@@ -2,6 +2,10 @@ body {
 	text-align: center;
 }
 
+h1 {
+	background-image: url("../img/mesh");
+}
+
 .logo {
 	display: inline-block;
 }
@@ -31,8 +35,34 @@ footer {
 }
 
 form {
-	border: solid 1px blue;
+	border: solid 3px blue;
 	margin-bottom: 200px;
+	/*text-align: center;*/
+	/*background-image: url("/../img/re.jpg");*/
+}
+
+form.QA {
+	background-image: url("/../img/re.jpg");
+}
+
+form::after {}
+
+input[type="submit"] {
+	/*align: bottom;*/
+	display: block;
+	/*text-align: center;*/
+	position: center;
+	margin: 0 auto;
+	/*color: white;*/
+	opacity: .9;
+}
+
+textarea {
+	opacity: .925;
+}
+
+.QA {
+	background-color: lightgrey;
 }
 
 .new-question {
@@ -41,12 +71,18 @@ form {
 
 .reply-box {
 	border: solid blue 3px;
+	/*background-color: lightgrey;*/
+}
+
+.new-reply {
+
 }
 
 .reply {
 	border: teal 1px dashed;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	text-align: left;
 }
 
 
