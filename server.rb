@@ -3,6 +3,7 @@ require "pg"
 require "bcrypt"
 require "pry"
 require "sinatra"
+require "rake"
 
 #@@db.exec_params(<<-SQL, [session["user_id"]])
 #				select * from users where id = $1
