@@ -4,6 +4,7 @@ require "bcrypt"
 require "pry"
 require "sinatra"
 require "rake"
+require "./config/environments"
 
 
 #@@db.exec_params(<<-SQL, [session["user_id"]])
