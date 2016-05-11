@@ -19,7 +19,18 @@ module Forum
 
 		# @@db ||= PG.connect(dbname: "forum")
 
-		def current_user 
+		if ENV["RACK_ENV"] == 'production'
+			@@db = PG.connect(
+				dbname: ENV["POSTGRES_DB"],
+				host: ENV["POSTGRES_HOST"],
+				password: ENV["POSTGRES_PASS"],
+				user: ENV["POSTGRES_USER"]
+			)
+		else
+			@@db = PG.connect(dbname: "forum")
+		end
+binding.pry
+		def current_user 	
 			if session["user_id"]
 				@current_user ||= @@db.exec_params(<<-SQL, [session["user_id"]]).first
 				select * from users where id = $1
