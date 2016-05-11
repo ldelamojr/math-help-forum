@@ -29,7 +29,7 @@ module Forum
 		else
 			@@db = PG.connect(dbname: "forum")
 		end
-binding.pry
+		
 		def current_user 	
 			if session["user_id"]
 				@current_user ||= @@db.exec_params(<<-SQL, [session["user_id"]]).first
