@@ -17,7 +17,7 @@ module Forum
 		enable :sessions
 #request.referer
 
-		@@db ||= PG.connect(dbname: "forum")
+		# @@db ||= PG.connect(dbname: "forum")
 
 		def current_user 
 			if session["user_id"]
