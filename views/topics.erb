@@ -7,16 +7,18 @@
 <%#end%>
 
 <!-- ######################################## -->
-
+<div class="banner">
 <%if current_user %>  <!--##################-->
-<h2> Welcome <%= current_user["user_name"] %><h2>
+
+<h2 class="welcome"> Welcome <%= current_user["user_name"] %><h2>
 <%end%>
 
-<h4>Choose an existing topic or make a new one at the bottom.</h4>
+<h4 class="index-instr">Choose or create a topic.</h4>
+</div>
 
 
 
-<h5>Topics!</h5>
+
 <!-- if option box value is sort by comments, then -->
 <%# @topics_by_comments.each do |topic| %>
 	<p><a href="<%# topic %>"></a></p>
@@ -25,16 +27,18 @@
 <%# @topics_by_upvotes.each do |topic| %>
 	<p><a href="<%# topic %>"></a></p>
 <%#end%>
-
+<div class="topic-list">
 <% @topics.each do |topic| %>
-	<p><a href="/topics/<%= topic["id"] %>"><%= topic["topic"] %></a></p>
+
+	<p><a class="a-topics" href="/topics/<%= topic["id"] %>"><%= topic["topic"] %></a></p>
 <%end%>
+</div>
 <%if current_user %>  <!--##################-->
 
 <form class="topic" action="/topics/new_topic" method="post">
 	<div class="input_row">
 		<label for="new_topic">New Topic: </label>
-		<input name="new_topic"/>
+		<textarea class="index-new-topic" name="new_topic"></textarea>
 	</div>
 	<!-- <div class="input_row">
 		<label for="new_question">Submit a question(optional)</label>

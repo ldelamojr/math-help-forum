@@ -170,13 +170,17 @@ module Forum
 			@@topic_id = params[:topic_id]
 			#page listing individual topic with all questions and replies beneath
 			@topic = @@db.exec_params("select * from topics where id = $1", [@@topic_id]).first["topic"]
-			@questions = @@db.exec_params("select * from questions where topic_id = $1", [@@topic_id.to_i])
-			
+			@questions = @@db.exec_params("select question, questions.id, users.user_name from users JOIN questions ON questions.user_id = users.id where topic_id = $1 order by questions.id", [@@topic_id.to_i])
+			# numberofquestions = @@db.exec_params("select * from questions")
+			# puts numberofquestions
 			@replies = {}
 			@questions.each do |question|
-				@replies[question["id"]] = @@db.exec_params("select reply from replies where quesiton_id = $1", [question["id"].to_i])
+				@replies[question["id"]] = @@db.exec_params("select * from replies JOIN users on replies.user_id = users.id where quesiton_id = $1 ORDER BY replies.id", [question["id"].to_i])
+binding.pry			
 			
 			end
+
+
 
 			# @questions.each do |question|
 			# 	@replies[question["id"]].each do |a_question|

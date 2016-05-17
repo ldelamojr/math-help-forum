@@ -1,9 +1,59 @@
 body {
 	text-align: center;
+	/*background-image: url("https://pbs.twimg.com/media/B1EsAowIEAAzTqs.jpg");*/
+	/*background-repeat: no-repeat;*/
+	background-position: 6%;
+	font-size: 1em;
+	width: 90%;
+	margin: 0 auto;
+	border: black;
+	/*background-position: 50%;*/
+	/*min-height: 100%;*/
+	/*position: relative;*/
 }
 
-h1 {
-	background-image: url("../img/mesh");
+label {
+	color: white;
+	font-size: 2em;
+}
+
+.banner {
+	/*background-color: darkgreen;*/
+	/*opacity: .95;*/
+}
+
+.a-topics {
+	/*background-color: darkgreen;*/
+	text-shadow: .8px .8px 0 darkgreen, -.8px -.8px 0 darkgreen, -.8px .8px 0 darkgreen, .8px -.8px 0 darkgreen;
+	color: darkgreen;
+	text-decoration: none;
+	font-size: 5em;
+	/*background-color: rgba(0,0,0,.6);*/
+}
+
+.topic-heading {
+	margin-top:1px;
+	font-size: 10em;
+	/*text-shadow: 1.1px 1.1px 0 #fff, -1.1px -1.1px 0 #fff, -1.1px 1.1px 0 #fff, 1.1px -1.1px 0 #fff;*/
+	color: #1EAEDB;
+}
+
+.welcome {
+	color: #1EAEDB;
+	/*text-shadow: 1.1px 1.1px 0 #1EAEDB, -1.1px -1.1px 0 #1EAEDB, -1.1px 1.1px 0 #1EAEDB, 1.1px -1.1px 0 #1EAEDB;*/
+}
+
+.index-instr {
+	color: #1EAEDB;
+	/*text-shadow: 1.1px 1.1px 0 #1EAEDB, -1.1px -1.1px 0 #1EAEDB, -1.1px 1.1px 0 #1EAEDB, 1.1px -1.1px 0 #1EAEDB;*/
+}
+
+.topic-list {
+	border: black solid 2px;
+}
+
+.index-new-topic {
+	color: white;
 }
 
 .logo {
@@ -11,21 +61,54 @@ h1 {
 }
 
 .logout {
+	overflow: auto;
 	text-align: right;
+	display: block;
+	/*float: right;*/
+	/*padding: 3px;*/
+}
+
+#logout-button {
+	display: block;
+	float: right;
+	text-decoration: none;
 }
 
 .user {
 	text-align: right;
+	padding-top: .6em;
+	font-weight: bold;
+}
+
+.user:hover {
+
 }
 
 a.home-link {
 	text-align: left;
+	float: left;
+	font-size: 1.6em;
+	color: white;
+	background-color: #1EAEDB;
+	border-radius: 4%;
+	/*padding: 7px;*/
+	border: #bbb solid 1px;
+	padding: 5px 30px;
+    border-radius: 4px;
+    text-decoration: none;
+    /*margin-bottom: 10px;*/
+}
+
+a.home-link:hover {
+	border: black solid 2px;
 }
 
 h3 {
-	background-image: url("http://lakesregionwater.com/images/questionsgit.jpg");
+	color: white;
+	/*background-image: url("http://lakesregionwater.com/images/questionsgit.jpg");*/
 	/*background-image: url("https://pixabay.com/static/uploads/photo/2015/12/13/09/40/banner-1090829_960_720.jpg");*/
-	text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;
+	/*text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, -1px 1px 0 #fff, 1px -1px 0 #fff;*/
+	border: black solid 3px;
 }
 
 footer {
@@ -35,14 +118,18 @@ footer {
 }
 
 form {
-	border: solid 3px blue;
+	border: solid 3px black;
 	margin-bottom: 200px;
+	background-color: darkgreen;
 	/*text-align: center;*/
 	/*background-image: url("/../img/re.jpg");*/
 }
 
 form.QA {
-	background-image: url("/../img/re.jpg");
+	/*background-image: url("/../img/re.jpg");*/
+	/*background-repeat: no-repeat;*/
+	background-color: #1EAEDB;
+	opacity: .9;
 }
 
 form::after {}
@@ -53,29 +140,36 @@ input[type="submit"] {
 	/*text-align: center;*/
 	position: center;
 	margin: 0 auto;
-	/*color: white;*/
-	opacity: .9;
-}
-
-textarea {
-	opacity: .925;
+	color: white;
+	background-color: #1EAEDB;
+	opacity: 1;
 }
 
 .QA {
-	background-color: lightgrey;
+	background-color: #1EAEDB;
+	opacity: .95;
+}
+
+h3.QA {
+	margin-bottom: 0;
 }
 
 .new-question {
 	font-size: 2em;
+	color: white;
 }
 
 .reply-box {
-	border: solid blue 3px;
-	/*background-color: lightgrey;*/
+	border: solid black 3px;
+	color: white;
+	font-family: helvetica;
+
+	background-color: darkgreen;
 }
 
-.new-reply {
-
+.new_reply {
+	min-height: 1em;
+	opacity: 1;
 }
 
 .reply {
@@ -83,6 +177,49 @@ textarea {
 	margin-top: 20px;
 	margin-bottom: 20px;
 	text-align: left;
+	/*display: inline-block;*/
 }
+.index-new-topic {
+	opacity: 1;
+	background-color: #1EAEDB;
+	color: white;
+	font-family: helvetica;
+	font-size: 1.5em;
+	width: 100%;
+	border	
+}
+
+textarea {
+	opacity: 1;
+	background-color: #1EAEDB;
+	color: white;
+	font-family: helvetica;
+	font-size: 1.5em;
+	width: 100%;
+	position: relative;
+	/*background-size: 100%;*/
+	/*position: absolute;*/
+	/*left: 15%;*/
+}
+
+textarea:focus {
+	opacity: 1;
+	border: black solid 1px;
+}
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #000000;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #000000;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #000000;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #000000;
+}
+
 
 

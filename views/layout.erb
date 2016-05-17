@@ -14,35 +14,38 @@
 
 </head>
 <body>
-	<header>
-		<% if !@non_secure_page %>
-			<span><a class="home-link" href="/topics">Topics</a></span>
-		<%end%>	
-
-		<div class="logout">
-
-			<a href="/logout">
-				<input class="logout" type="submit" value="Log Out"/>
-			</a>
-		</div> 
-		<% if @non_secure_page == true %>
-		  <!-- session.delet -->
-		<% elsif current_user %> 
-			<p class="user">You are logged in as <%= current_user["user_name"] %>.</p> 
-		<%else%>
-			<% redirect "/login" %>
-		<%end%>
-
-<!-- 		<div class="logo" style="text-align: center"><h1>Math-Forum</h1></div> -->
-
-
-
-	</header>
 	
-	<%= yield %>
+		<header>
+			<% if !@non_secure_page %>
+				<a class="home-link" href="/topics">Back To Topics</a>
+			<%end%>	
 
-	<footer>
-		Leo 2015
-	</footer>
+			<div class="logout">
+
+				<a id="logout-button" href="/logout">
+					<input class="logout" type="submit" value="Log Out <%if current_user %><%=current_user["user_name"]%><%end%>"/>
+				</a>
+			</div> 
+			<% if @non_secure_page == true %>
+			  <!-- session.delet -->
+			<% elsif current_user %> 
+				<!-- <p class="user">You are logged in as <%# current_user["user_name"] %>.</p>  -->
+			<%else%>
+				<% redirect "/login" %>
+			<%end%>
+
+	<!-- 		<div class="logo" style="text-align: center"><h1>Math-Forum</h1></div> -->
+
+
+
+		</header>
+		
+		<%= yield %>
+
+		<footer>
+			Leo 2015
+		</footer>	
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="../javascript/attention.js" type="text/javascript" charset="utf-8" async defer></script>

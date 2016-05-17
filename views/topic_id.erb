@@ -9,21 +9,21 @@
 <!-- ######################################## -->
 <!-- <a href="/topics">Home</a> -->
 
-<h1><%= @topic %></h1>
+<h1 class="topic-heading"><%= @topic %></h1>
 
 <% @questions.each do |question| %>
 
-		<h3 class="QA"><%= question["question"] %></h3>
+		<h3 class="QA"><%= question["question"] %> ->> <span style="color: darkgreen;"><%=question["user_name"]%></span></h3>
 		<!-- here I could possibly import more than merely the "question" column from the db, I could import the "id" as well and then below, regarding printing the replies associated with the appropriate "question_id", perhaps have a squid querying the data base... or perhaps better have a loop in the server.rb file and storing an array of arrays where index[0][i's] hold the replies for the zeroeth question and index[1][i's] hold the replies for the first question and so on, but not sure how that would work considering ordering the questions.-->
 		<div class="reply-box QA">
 			<% @replies[question["id"]].each do |some_question| %>
-				<h5 class="reply"><%= some_question["reply"] %></h5>
+				<h5 class="reply"><%= some_question["reply"] %> ->> <span style="color: #1EAEDB;"><%=some_question["user_name"]%></span></h5>
 			<%end%>
 		</div>
 		<form class="new_reply QA" action="/topics/:topic_id/question_id/new_reply" method="post">
 			<textarea placeholder="Type new reply here." class="new_reply" name="reply"></textarea>
 			<input class="QA" type="hidden" name="question_id" value="<%=question["id"]%>"/>
-			<input class="QA" type="submit" value="Submit Reply"/>
+			<input id="submit-button" class="QA" type="submit" value="Submit Reply"/>
 		</form>
 
 		<%# @replies.each do |reply| %>
