@@ -176,7 +176,7 @@ module Forum
 			@replies = {}
 			@questions.each do |question|
 				@replies[question["id"]] = @@db.exec_params("select * from replies JOIN users on replies.user_id = users.id where quesiton_id = $1 ORDER BY replies.id", [question["id"].to_i])
-binding.pry			
+# binding.pry			
 			
 			end
 
